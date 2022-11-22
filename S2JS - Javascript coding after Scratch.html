@@ -1,0 +1,1021 @@
+
+<!-- saved from url=(0017)https://s2js.com/ -->
+<html style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- 
+        Copyright 2014-2021, Ian Davies. . All Rights Reserved.
+   -->
+<link rel="icon" href="https://s2js.com/favicon.png" type="image/png">
+<title>S2JS - Javascript coding after Scratch</title>
+<meta name="author" content="Ian Davies">
+<meta name="description" content="An educational tool that teaches Javascript coding to kids who have programmed in Scratch.">
+<meta name="keywords" content="Scratch,Javascript,conversion,school,k12,kids,programming,education,coding">
+<script async="" src="./S2JS - Javascript coding after Scratch_files/analytics.js.download"></script><script src="./S2JS - Javascript coding after Scratch_files/ga.js.download"></script>
+<style>
+body {background-color: #E9E9E9; margin:0px;}
+@font-face {
+    font-family: 'nerissemibold';
+    src: url('fonts/Neris-SemiBold-webfont.eot');
+    src: url('fonts/Neris-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Neris-SemiBold-webfont.woff') format('woff'),
+         url('fonts/Neris-SemiBold-webfont.ttf') format('truetype'),
+         url('fonts/Neris-SemiBold-webfont.svg#nerissemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'neristhin';
+    src: url('fonts/Neris-Thin-webfont.eot');
+    src: url('fonts/Neris-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Neris-Thin-webfont.woff') format('woff'),
+         url('fonts/Neris-Thin-webfont.ttf') format('truetype'),
+         url('fonts/Neris-Thin-webfont.svg#neristhin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'nerislight';
+    src: url('fonts/Neris-Light-webfont.eot');
+    src: url('fonts/Neris-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Neris-Light-webfont.woff') format('woff'),
+         url('fonts/Neris-Light-webfont.ttf') format('truetype'),
+         url('fonts/Neris-Light-webfont.svg#nerislight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nerisblack';
+    src: url('fonts/Neris-Black-webfont.eot');
+    src: url('fonts/Neris-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Neris-Black-webfont.woff') format('woff'),
+         url('fonts/Neris-Black-webfont.ttf') format('truetype'),
+         url('fonts/Neris-Black-webfont.svg#nerisblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav a { 
+    text-decoration: none;
+    font: 14px nerissemibold;
+    color: #384651;
+  	white-space: nowrap;
+    display: block; }
+nav a:hover {background-color: #384651; color:white }
+nav ul { list-style: none;  margin: 0; padding: 0; }
+
+/* Top-level menu */
+nav > ul > li > a { padding: 0px 30px;  display: block;}
+
+/* Dropdown Menu */
+nav ul li ul {  background: #fCEA96; }
+nav ul li ul li { text-align: right;  }
+nav ul li ul a { padding: 3px 20px;  }
+#navbar {display:none; position:absolute; right:0; top:50px; z-index:98; cursor:pointer; border-left: 3px solid #FFd54F; border-bottom: 3px solid #FFd54F;}
+
+
+.nl {font-family: 'nerislight', Arial, sans-serif}
+.nb {font-family: 'nerisblack', Arial, sans-serif}
+.nt {font-family: 'neristhin', Arial, sans-serif}
+.ns {font-family: 'nerissemibold', Arial, sans-serif}
+
+.popbox {box-shadow: 0px 2px 5px #A0A0A0; background-color:white; overflow: auto; position:absolute; top:50px; border-radius:8px;  margin:40px; padding:25px; z-index:95; }
+.popbox tr td:first-child {font-size:36px; width:30%; padding-right:20px}
+.poptwocol {font-size:14px; -webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-break-inside:avoid; -moz-column-break-inside:avoid; column-break-inside:avoid;}
+.pophead {font-family: 'nerisblack', Arial, sans-serif; padding-bottom:8px; padding-top:16px}
+.popclose {text-align:right; cursor:pointer}
+.popcolor {color:#FEB300; }
+
+#welcome {text-align:center }
+#directentry {width:100%; height:100%; background-color: rgba(0, 0, 0, 0.61); position: absolute; top: 0;left: 0;}
+#directentryinner {width:720px; left:10%; background-color: #fcea96; box-shadow: 0px 2px 25px white}
+#directentryinner  button  { margin: 0 auto; display: block; font-weight: bolder; margin-top: 1em;}
+
+.NotLoggedOn {pointer-events: none; cursor: default; opacity: 0.6;}
+
+#toolbar {width:100%; height:50px; background-color:#FFd54F;  position:relative; color:#384651; box-shadow: 0 2px 5px #A0A0A0;}
+.logo {font-size:32px; margin-left:10px}
+.tool {margin-left:40px; border: 1px solid #FFd54F; padding: 0 14px; font-size:16px; line-height:50px; position:relative; top:-5px; cursor:pointer;}
+.tool:link  a:hover, a:visited, a:link, a:active { text-decoration: none; color:#384651; }
+.tool:hover  { border: 1px outset #FCEA96; border-radius: 25px;  }
+.toolselected  { border: 1px  #FCEA96;; border-radius: 25px; background-color:#FCEA96; }
+#uid {float:right; font-size:16px; line-height:50px; }
+#menubtn {float:right;  height: 100%;  margin: 0px;  padding-right: 20px;  padding-top: 16px;  padding-left: 16px;}
+#ffdiv table {float:top; height:100%}
+#ffdiv iframe {border: none; width:100%; height:100%;}
+#ffdiv td {overflow: hidden}
+#XXdivider {border-left:6px solid #734C3D; cursor: ew-resize; width:0; padding:0}
+#divider {border:none; cursor: ew-resize; width:26px; background: transparent;  padding:0}
+#dividermarker {width:4px; background-color:#384651; height:100% }
+#GroupLogo[src="img/empty.png"] {display:none}
+#GroupLogo {height:50px; float:left}
+
+#grabber {cursor: ew-resize; ddisplay:none; opacity:0.1; background-color:grey; border:2px dotted blue; z-index:110; position: absolute; top:0; left:0}
+.selectDisable {-webkit-user-select: none;  -khtml-user-select: none;   -moz-user-select: none; -o-user-select: none;    user-select: none; }
+.goog-te-gadget-simple {background-color: transparent !important; border:none !important}
+.goog-te-gadget{font-family: 'nerissemibold', Arial, sans-serif !important; font-size:16px !important}
+
+#tconsole iframe {width:100%; height:100%; border:none}
+#tconsole {left:0; right:0}
+
+#useracct iframe {width:100%; height:100%; border:none}
+#useracct {left:0; right:0}
+
+</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="./S2JS - Javascript coding after Scratch_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./S2JS - Javascript coding after Scratch_files/m=el_main"></script><script type="text/javascript"> 
+/* 
+ * Chrome token signing extension 
+ * 
+ * This library is free software; you can redistribute it and/or 
+ * modify it under the terms of the GNU Lesser General Public 
+ * License as published by the Free Software Foundation; either 
+ * version 2.1 of the License, or (at your option) any later version. 
+ * 
+ * This library is distributed in the hope that it will be useful, 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+ * Lesser General Public License for more details. 
+ * 
+ * You should have received a copy of the GNU Lesser General Public 
+ * License along with this library; if not, write to the Free Software 
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA 
+ */ 
+ 
+// Promises 
+var _eid_promises = {}; 
+// Turn the incoming message from extension 
+// into pending Promise resolving 
+window.addEventListener("message", function(event) { 
+    if(event.source !== window) return; 
+    if(event.data.src && (event.data.src === "eparaksts-background.js")) { 
+        console.log("Page received: "); 
+        console.log(event.data); 
+        // Get the promise 
+        if(event.data.nonce) { 
+            var p = _eid_promises[event.data.nonce]; 
+            // resolve 
+            if(p !== undefined) { 
+                if(event.data.result === "ok") { 
+                    if(event.data.signature !== undefined) { 
+                        p.resolve({hex: event.data.signature}); 
+                    } else if(event.data.version !== undefined && event.data.extension !== undefined) { 
+                        p.resolve(event.data.version + "/js" + event.data.extension); 
+                    } else if(event.data.cert !== undefined) { 
+                        p.resolve({hex: event.data.cert}); 
+                    } else { 
+                        console.log("No idea how to handle message"); 
+                        console.log(event.data); 
+                    } 
+                } else { 
+                    // reject 
+                    p.reject(new Error(event.data.result)); 
+                } 
+            } else { 
+            	console.log("Undefined promise"); 
+            } 
+            delete _eid_promises[event.data.nonce]; 
+        } else { 
+            console.log("No nonce in event msg"); 
+        } 
+    } 
+}, false); 
+ 
+ 
+function eParakstsTokenSigning() { 
+    function nonce() { 
+        var val = ""; 
+        var hex = "abcdefghijklmnopqrstuvwxyz0123456789"; 
+        for(var i = 0; i < 16; i++) val += hex.charAt(Math.floor(Math.random() * hex.length)); 
+        return val; 
+    } 
+ 
+    function messagePromise(msg) { 
+        return new Promise(function(resolve, reject) { 
+            // amend with necessary metadata 
+            msg["nonce"] = nonce(); 
+            msg["src"] = "eparaksts-page.js"; 
+            // send message 
+            window.postMessage(msg, "*"); 
+            // and store promise callbacks 
+            _eid_promises[msg.nonce] = { 
+                resolve: resolve, 
+                reject: reject 
+            }; 
+        }); 
+    } 
+    this.getCertificate = function(options) { 
+        var msg = {type: "CERT", lang: options.lang, operation: options.operation}; 
+        console.log("getCertificate()"); 
+        return messagePromise(msg); 
+    }; 
+    this.sign = function(cert, hash, options) { 
+        var msg = {type: "SIGN", cert: cert.hex, hash: hash.hex, hashtype: hash.type, lang: options.lang, operation: options.operation}; 
+        console.log("sign()"); 
+        return messagePromise(msg); 
+    }; 
+    this.getVersion = function() { 
+        console.log("getVersion()"); 
+        return messagePromise({ 
+            type: "VERSION" 
+        }); 
+    }; 
+} 
+</script></head>
+
+
+<body onunload="ga(&#39;send&#39;, &#39;event&#39;, &#39;ExitSite&#39;)" style="position: relative; min-height: 100%; top: 0px;">
+
+<div id="toolbar" onmouseleave="DisplayMenu(false)">
+	<img id="GroupLogo" src="./S2JS - Javascript coding after Scratch_files/empty.png">
+    <a href="http://s2js.com/" title="You are here">
+       <span class="logo"> <span class="nl">S2</span><span class="nb">jS</span> </span>
+       </a> 
+  <span id="teacher" class="tool ns" onclick="SysMenu(&#39;none&#39;); setSplit(100)" title="Learn about Javascript"> Learn</span>
+  <span id="coder" class="tool ns toolselected" onclick="SysMenu(&#39;none&#39;); setSplit(0)" title="Create your own programs"> Create Your Own </span>
+  <span id="both" class="tool ns" onclick="SysMenu(&#39;none&#39;); setSplit(50)" title="Split screen - copy &amp; paste from tutorials to your own projects">Split Screen</span>
+
+  <a href="https://s2js.com/#" id="menubtn" onmouseenter="DisplayMenu(true)" onclick="DisplayMenu()"><img src="./S2JS - Javascript coding after Scratch_files/menu2.png"></a>
+  
+  <span id="uid" class="ns">RobertsTroka</span>
+
+  <div id="google_translate_element" style="display:inline-block; margin-right:40px; float:right; border:none; margin-top:4px" class="tool"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="./S2JS - Javascript coding after Scratch_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="./S2JS - Javascript coding after Scratch_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="./S2JS - Javascript coding after Scratch_files/cleardot.gif" alt="" width="1" height="1"><span aria-hidden="true" style="color: rgb(118, 118, 118);">▼</span></a></span></div></div></div>
+	<script type="text/javascript">
+	function googleTranslateElementInit() {  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false, gaTrack: true, gaId: 'UA-55449998-1'}, 'google_translate_element');}
+	</script><script type="text/javascript" src="./S2JS - Javascript coding after Scratch_files/element.js.download"></script>  
+
+	
+		
+  <nav id="navbar" onmouseleave="DisplayMenu(false)" style="display: none;">
+    <ul>
+        <li>
+            <ul>
+                <li><a onclick="SysMenu(&#39;welcome&#39;)">  Welcome</a></li>
+                <li><a onclick="SysMenu(&#39;privacy&#39;)">  Privacy</a></li>
+                <li><a onclick="SysMenu(&#39;terms&#39;)">    Terms of use</a></li>
+                <li><a onclick="SysMenu(&#39;faq&#39;)">      FAQ</a></li>
+                <li><a onclick="SysMenu(&#39;useracct&#39;)" class="LogonReqd">Your Account</a></li>  
+                <li><a onclick="SysMenu(&#39;tconsole&#39;)" class="LogonReqd"> Teacher console</a></li>  
+                <li><a onclick="SysMenu(&#39;links&#39;)">    Links</a></li>
+                <li><a onclick="SysMenu(&#39;contact&#39;)">  Contact</a></li>
+                <li><a onclick="SysMenu(&#39;about&#39;)">    About</a></li>
+                <li><a onclick="broadcast(&#39;DoLogout&#39;)" class="LogonReqd">    Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+ </nav>  
+
+</div>  <!--toolbar -->
+
+
+<div id="ffdiv" class="sysmenu" style="width:100%; height:96%; height: calc(100% - 70px); position:absolute; top:50px; ">  
+
+  
+<table id="tablex" width="100%">
+  <tbody><tr>
+    <td id="col_left" width="0%" style="display: none;"><iframe id="xleft" src="./S2JS - Javascript coding after Scratch_files/teacher.html"></iframe></td>
+	
+    <td id="divider" width="3px" onmousedown="mousedown(event)" ontouchstart="touchstart(event)" onmouseover="var w= document.getElementById(&#39;img_resizer&#39;); w.style.display=&#39;inline&#39;; w.style.left=(event.clientX-32)+&#39;px&#39;; w.style.top=(event.clientY-16)+&#39;px&#39;; " onmouseout="document.getElementById(&#39;img_resizer&#39;).style.display=&#39;none&#39;" title="Slide to split between tutorial and developing your own stuff">
+	 <div id="dividermarker"> </div>
+	 <img id="img_resizer" hidden="" src="./S2JS - Javascript coding after Scratch_files/resizer2.png" class="selectDisable" style="position: fixed; top: 212px; display: none; left: -23px;">
+	</td>
+
+    <td id="col_right"><iframe id="xright" src="./S2JS - Javascript coding after Scratch_files/coder.html"></iframe></td>
+  </tr>
+  </tbody></table>
+
+  <div id="grabber"> </div>  
+
+</div> 
+
+ 
+
+<div id="welcome" hidden="" class="popbox sysmenu nl" style="display: none;">
+
+    <img src="./S2JS - Javascript coding after Scratch_files/welcome.jpg">
+    <p>
+    </p><h3>S2JS helps you move beyond <a title="Scratch is by MIT Media Labs, and is awesome." href="http://scratch.mit.edu/">Scratch</a> to Javascript. </h3>
+	If you've enjoyed coding in <a href="http://scratch.mit.edu/"><u>Scratch</u></a>, but find yourself bumping up against its limitations and would like to take the next
+	step in programming Javascript, then S2JS is for you. You'll be able to write Scratch-like games that run anywhere, including on your
+	friends smartphones.
+    <div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+	   Let's get started
+		</div>
+  </div>
+
+
+<div id="privacy" hidden="" class="popbox sysmenu">
+  <table>
+    <tbody><tr>
+        <td class="nl popcolor">
+            "We don't sell your identity or spam you...
+            </td>
+        <td>
+           <div class="ns poptwocol">
+				<div class="pophead">Privacy Policy</div>
+				You can access all the tutorial portions of this site without providing personal information. 
+				<p>
+				However, to create your own programs  you are required to create a unique username and password.
+
+				</p><div class="pophead">Sharing of your personal information</div>
+				We do not share your information with other organisations. We do not transmit or store your password in plain text. 
+
+				<div class="pophead">Use of your personal information</div>
+				We require your email address solely for the purpose of recovering your account should you forget your password.
+				We may use your email address to notify you of changes
+				to the website. 
+				<p>	  
+				For each visitor to reach the site, we use Google to collect non-personally
+				identifiable information, including but not limited to browser type, version and language,
+				operating system, pages viewed while browsing the Site, page access times and referring website address.
+				This collected information is used internally solely for the purpose of gauging visitor traffic and trends.
+				</p><p>
+				From time to time, we may use customer information for new, unanticipated uses 
+				not previously disclosed in our privacy notice. If our information practices change at some time in
+				the future we will only use data collected from the time of the change for these new purposes.
+
+				</p><div class="pophead">Changes</div>
+				We reserve the right to make amendments to this Policy at any time. 
+				If you have objections to the Privacy Policy, you should not access or use the Site.
+
+				<div class="pophead">Accessing Your Personal Information</div>
+				You have a right to access your personal information, subject to exceptions allowed by law.
+				  
+				<div class="pophead">Contacting us</div>
+				We welcome your comments or questions regarding this Policy, please 
+				contact us by email:  <span class="popcolor"> privacy@s2js.com</span>
+				<div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+				Close
+				</div>
+			 </div></td>
+        </tr>
+        </tbody></table>
+  </div>
+
+ 
+<div id="terms" hidden="" class="popbox sysmenu">
+  <table>
+    <tbody><tr>
+        <td class="nl popcolor">
+            "Reasonable use for non-commercial educational purposes...
+            </td>
+        <td>
+           <div class="ns poptwocol">
+			  <div class="pophead">Terms of use</div>
+			  <p>
+			  In order to use the Site, you must accept the terms set forth below. 
+			  If you are a minor, your parent or guardian must accept the terms and full responsibility for your use of the website.
+			  BY USING THE WEBSITE, YOU AGREE TO THESE TERMS. 
+			  </p><p>
+
+			  The website HTML, software and courseware made available on this website are the property of S2JS. 
+			  You are welcome to display on your computer, download, and print pages from 
+			  this website for personal and educational use only. 
+			  </p><p>
+
+			  The website is provided "AS IS". Your use of this website is at your own risk. 
+			  S2JS disclaims all warranties, expressed or implied, including without limitation, 
+			  warranties of merchantability and fitness of a particular purpose. S2JS disclaims liability 
+			  for any direct, indirect, incidental, special, consequential, exemplary, punitive or other damages, or 
+			  lost profits, that may result directly or indirectly from the use of the website. This includes, without
+			  limitation, any damage to computer systems, hardware or software, loss of data, or any other performance failures, 
+			  any errors, bugs, viruses or other defects that result from, or are associated with the use of this website. 
+			  </p><p>
+			  Access to this website is limited to reasonable use for non-commercial educational purposes. You may
+			  choose to charge a fee for your personal tuition services related to S2JS, but may not charge for access 
+			  to S2JS itself.
+			  Any disruptive or offensive use may be restricted or deleted, subject to the sole discretion of S2JS. 
+			  </p><p>
+        All software you store on this site is restricted to small projects for your own education or the education of others. Any 
+        files found to be for other purposes may be deleted without notice, at the sole discretion of S2JS. You may not copy 
+        large-scale code from other commercial websites and store it on S2JS. Any such code will be deleted without notice.
+        </p><p>
+			  S2JS may modify this agreement at any time, and such modifications shall be effective immediately. 
+			  </p><p>
+        Sounds too tough? if you're not happy, all money paid will be cheerfully refunded.
+				</p><div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+				Close
+				</div>
+			 </div></td>
+        </tr>
+        </tbody></table>
+  </div>
+ 
+ <div id="contact" hidden="" class="popbox sysmenu">
+  <table>
+    <tbody><tr>
+        <td class="nl popcolor">
+            Contact Us
+            </td>
+        <td>
+           <div class="ns poptwocol">
+				  We're very happy to hear from users, educators, critics, fans, competitors, litigants - whoever.
+				  <p>
+				  If you've noticed a bug on a particular platform, or a tpyo, or have a great idea, or think the courseware is paced too fast or too slow - please let us know.
+				  </p><p> &nbsp; </p><p>
+				  </p><p> &nbsp; </p><p>
+				  </p><p> &nbsp; </p><p>
+				  
+				  email us at <a href="mailto:contact@s2js.com">contact@s2js.com</a>
+				  </p><p>
+				</p><div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+				Close
+				</div>
+			 </div></td>
+        </tr>
+        </tbody></table>
+  </div>
+				 
+ 
+<div id="faq" hidden="" class="popbox sysmenu nl">
+  <div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+	   Close
+		</div>
+
+  <h1>Frequently Asked Questions</h1>
+  <h2>What if you don't already know Scratch?</h2>
+      Scratch is awesome. It's certainly possible to use S2JS is you haven't done coding in Scratch as long as you've
+	  used other ('proper') programming tools that involve "loops" and "if-then-else" and "variables". If you've
+	  never heard of these things, then head on over to <a href="http://www.scratch.mit.edu/"><u>Scratch</u></a> and 
+	  start learning how to code. When Scratch is starting to feel a little tight around the armpits, 
+	  come back here.
+  <h2>Pricing</h2>
+      S2JS is free - free like a free lunch, but with less food. 
+	  <p>
+	  Free for reasonable, non-commercial educational use. More details under Terms of Use.
+  </p><h2>What age groups is S2JS appropriate for ?</h2>
+      It's not so much about age, but about how much Scratching you've done. You need to be very comfortable making
+	  sprites move around and using variables. You should be a master of repeat and if-then-else blocks, and it would
+	  be great (but not essential) if you know about cloning and "make a block".
+   <h2>Does it matter if I skip around the tutorial sections ?</h2>
+	  Pretty much does. The sections are constructed with a careful flow - the coding introduced in one section will be used in 
+	  the next section as a basis to introduce another new thing. If you skip around, you may find yourself feeling a bit lost.
+	  <p>
+	  Even if you've done some Javascript before, we'd recommend you follow the lesson flow. You might want to go through
+	  fairly quickly, but that's better than diving into the middle and not fully understanding.
+   </p><h2>How many programs / images can we store ?</h2>
+      As many until it gets unwieldy for you - which is possibly a dozen or so. This is by design - S2JS is an education tool to 
+    help Scratchers get fired up about Javascript. 
+    <p>If you're developing something massive, then it's time to go find
+    a proper IDE, and S2JS will have happily done it's job. If you use S2JS to store multi-megabyte programs you grabbed from somewhere 
+    else for dodgy purposes, we will delete them without notice. Please don't do this.
+  </p><h2>Can we use S2JS in our coding class or club ?</h2>
+	  Yes, please do. In fact, that seems to be where S2JS works best.
+	  <p>
+	  Many providers use a <a href="https://en.wikipedia.org/wiki/Flipped_classroom" target="_blank"><u>Flipped Classroom</u></a> approach,
+	  where kids work through the S2JS tutorials, and the teacher roams the room providing custom one-on-one assistance as required.
+	  </p><p>
+	  Many teachers will also periodically set a group goal or challenge, to establish a checkpoint and ensure everyone is achieving
+	  proper comprehension and not just click click clicking ahead. You decide what you want the kids to achieve, and they do their work 
+	  in their private S2JS project area.
+	  </p><p>
+	  As a teacher, you can also use our Teacher Console to monitor students progress and work.
+  </p><h2>How does the Teacher Console work ?</h2>
+	  If you're a school teacher or club organizer, the Teacher Console lets you
+	  keep track of your students, see what tutition modules they've been through and how long they spent
+	  on each one, as well as seeing the programs they've been working on -- source and execution.
+	  <p>
+	  You create a teacher group, and are then provided with a special S2JS url. Any student accessing S2JS via
+	  that url becomes a permanent member of your group. 
+	  </p><p>
+	  Kids can be members of more than one group, groups can have more than one owner, and owners 
+	  can have more than one group.
+	  </p><p>
+	  The Teacher Console is a great place to keep an eye on your kids progress. 
+  </p><h2>Can I charge money for that ?</h2>
+	  We have no problem with you using S2JS as part of an educational service for which you charge a fee. You can't charge for 
+	  access to S2JS, but you can charge for your resources and tuition.
+  <h2>Why are images limited to 120k ?</h2>
+      We're not Google, you know. We're not made of money so they've got to be limited to something.
+	  The goal was to provide a simple place for private image storage that isn't likely to be blocked by your school firewall. If you can
+	  access S2JS, you can access its image storage. 
+	  <p>
+	  You can always store your larger images on a separate image-sharing website (whatever your firewall allows), and just reference those urls in the
+	  programs you store on S2JS.
+  </p><h2>Why Javascript ?</h2>
+      Many educators head towards Python as the natural progression after coding in Scratch. Python is a 
+	  fine language with many good features as well as one or two horrendous ones. The
+	  problem with Python is it doesn't achieve the goal of running in a browser without
+	  installation and providing proper game-quality graphics you can immediately share
+	  with your friends on their own diverse devices. 
+	  <p>
+	  Javascript certainly has its shortcomings, but we feel the advantages listed above
+	  combined with its real-world applicability makes it a good next step in kids coding careers.
+  </p><h2>Didn't you know there's an easier/shorter/more elegant way to &lt;do a certain thing&gt;  ?</h2>
+      Yeah, maybe we did. Frequently we'll do something in several steps when it could be done in one.
+	  <p> 
+	  The goal is for users to see how to build up complex things from simple things, rather than present them with
+	  a lengthy nested expression and have their mind boggle. Far better to do it over three lines, and have them follow
+	  every step. 
+	  </p><p>
+	  We also try to be mindful of what subset of Javascript they've actually been introduced to.
+	  Hopefully, in due course, they'll snort with derision and recode it as a single statement - having totally understood why.
+	  </p><p>
+	  But if you see something where you think we've missed a simpler path, notwithstanding the preceding comments,
+	  then please do let us know.
+  </p><h2>I think you're teaching bad style when you &lt;do a certain thing&gt;  ?</h2>
+      Similar to above. Our goal is not to teach people how to write industrial-strength webpages that will run on every 
+	  browser since IE 1.0.  Our goal is to provide a path to enthusiasm for things beyond Scratch, and to sidestep 
+	  as many hurdles as possible along the way. Inserting a hundred calls to getElementById would not enhance enthusiasm.
+  <h2>Why can't you spell ?</h2>
+      We use Australian spelling for words like "colour". Eventually we'll get around to providing appropriate spelling depending on your location.
+      <h2>What should I do when I find a bug, typo, contradiction, etc ?</h2>
+      Please let us know. Bugs and typos do not besmirch one's honour, but unfixed bugs and typos most certainly will.
+ <h2>Can I use S2JS as a general purpose place to store code that I've grabbed from somewhere else to assist me with malware or adblocking and whatever?</h2>
+      You'd be surprised how many people seem to think the answer to this is yes, but actually it's no. If you put anything like this on S2JS 
+      it will be deleted without notice. Similarly, just grabbing large chunks of code and saving it on S2JS as a place to keep it 
+      is unappreciated and will also be deleted. 
+      <p>
+      There are many other places on the Internet you can freely use for general code storage. Please use those. 
+      The purpose of S2JS is to help you make your first steps in Javascript, and give you a place to store your own programs in pursuit of that.
+ </p><h2>Who are you and why are you doing this ?</h2>
+      I taught myself electronics and machine language programming as a teenager in the late 1970's. 
+	  <p>
+	  From there
+	  I got a degree in Computer Science and started my career at a medium-sized company. Six years later I quit my job
+	  and freelanced while looking around for ideas. I ended up writing some software and starting a company, which 
+	  I ran for 20 years before selling it to a large multinational.
+	  </p><p>
+	  No longer working, I became involved in my daughters school and was actively involved in a coding club for six years,
+	  where I saw hundreds of kids enthused about Scratch, but lose interest in trying to make the leap to Python or
+	  Javascript. Or Unity, or any number of other things.
+	  </p><p>
+	  It made me realise something needed to bridge the gap between Scratch and "lines of code" languages, so I used
+	  my experiences at the primary and high school to create S2JS.
+	  </p><p>
+	  Computing has been good to me, so I'm happy to self-fund S2JS.
+	  </p><p>
+	  If you're interested in how teenagers explored computing at the dawn of the modern industry,
+	   <a href="https://s2js.com/altair">click here for a MITS Altair Simulator</a> that provides a true-life simulation of the type of computers
+	  we used. The "good old days" were not then; they are <b><i>now</i></b>.
+	  
+	  
+  </p><h2>Copyright</h2>
+      Text, Javascript source code, HTML and courseware is (c) Copyright 2014-2021 <a href="https://s2js.com/FlatView" style="text-decoration:none">S2JS</a> and Ian Davies.
+      <p>
+      Scratch, the Scratch Cat, and portions of certain screenshots are copyright MIT Media Lab.
+      </p><p>
+      Scratch is a project of the Lifelong Kindergarten group at the MIT Media Lab. It is available for free at http://scratch.mit.edu. 
+      </p><p>
+  </p></div>
+ 
+ 
+<div id="links" hidden="" class="popbox sysmenu nl">
+  <div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+	   Close
+		</div>
+
+  <h1>Links</h1>
+  <h3>S2JS commends the following links:</h3>
+  <p>
+  
+  <a target="_blank" href="http://www.scratch.mit.edu/"><b><u>Scratch</u></b></a> — the definitively best place
+     for kids or adults to learn the basics of computer programming. 
+     </p><p>
+  
+  
+  <a target="_blank" href="http://www.w3schools.com/"><b><u>W3Schools</u></b></a> — the place to go to learn more about HTML, Javascript,
+     CSS or a plethora of other web technologies. Reference source and tutorials.
+     </p><p>
+  
+  <a target="_blank" href="http://www.slideshare.net/DarrenAdkinson/understanding-scratchx-extensions-with-javascript"><b><u>ScratchX</u></b></a> — an introduction to writing ScratchX extensions using Javascript
+     </p><p>
+  
+  <a target="_blank" href="http://codemahal.com/"><b><u>CodeMahal</u></b></a> — a very good set of video tutorials on HTML, CSS, Javascript, PHP, Unity, MySQL, Arduino and many other topics.
+     </p><p>
+	 
+  <a target="_blank" href="https://s2js.com/altair"><b><u>MITS Altair Simulator</u></b></a> — for retro individuals 
+     interested in experiencing how people taught themselves to program in binary in the 1970's
+     </p><p>
+	 
+  </p></div>
+ 
+   
+<div id="about" hidden="" class="popbox sysmenu">
+  <table>
+    <tbody><tr>
+        <td class="nl popcolor">
+            "S2JS is coding tutor, IDE, reference source and delivery platform - all in one
+            </td>
+        <td>
+           <div class="ns poptwocol">
+				<div class="pophead">About</div>
+   
+				  S2JS is a constant work-in-progress so your feedback is welcome.
+				  <p>
+				  Its goal is to provide a FREE path for kids who are skilled in Scratch and would like to 
+				  progress their coding skills in a more powerful direction.
+				  </p><p>
+				  First, let's all agree that Scratch is awesome. Without doubt the best training language for kids (or adults) by a country mile.
+				  </p><p>
+				  Python is also a popular training language and a frequent next step for Scratch graduates. 
+				  Python is a fine language with many nice features as well as one or two horrific ones, but it presents a couple of pitfalls:
+				  </p><ul>
+				  <li>It's very textual, unless you make use of pygame</li>
+				  <li>pygame comes with various dependancies </li>
+				  <li>Python IDEs also come with various dependancies</li>
+				  <li>Once you work through all that, you still don't get an executable that will run anywhere</li>
+				  </ul>
+				  Javascript (and the HTML canvas) is a good choice because you can produce programs that literally will run anywhere, and there's no
+				  greater affirmation than having your friends play your game on their smartphone.
+				  <p>
+				  Javascript is powerful enough to access all the important smartphone features, including touch and tilt, while rigorous enough
+				  to teach a few good CS concepts along the way.
+				  </p><p>
+				  The problem with Javascript is that it's a bit of a shaggy-dog story, bound up in early HTML, DOM, CSS, webservers, and finally Javascript itself.
+				  </p><p>
+				  We've sought to take a few shortcuts in the interests of giving keen kids a fast path towards taking the type of things they were achieving in Scratch,
+				  and achieving them (and more!) in Javascript running directly on their friends smartphones. We've skipped various parts of the shaggy-dog story 
+				  important for a full understanding, and instead focussed on a path that leads to gratification and achievement of results.
+				  </p><p>
+				  S2JS is coding tutor, IDE, reference source and delivery platform - all in one.
+				</p><div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+				Close
+				</div>
+			 </div></td>
+        </tr>
+        </tbody></table>
+  </div>
+				 
+  
+ <div id="tooold" hidden="" class="popbox sysmenu nl">
+		  <h1>Old Browser</h1>
+		  The browser you are using is too old to use with S2JS.
+		  <p>
+		  Either install a more recent version of this browser, or try using a different browser.
+		  </p><p>
+		  </p><div class="pophead popclose popcolor" title="Got it !" onclick="SysMenu(&#39;none&#39;)">
+			   Close
+				</div>
+				 
+        
+        
+  </div>
+	
+  
+ <div id="directentry" hidden="" class="sysmenu" onclick="SysMenu(&#39;none&#39;)">
+  <div id="directentryinner" class="popbox nl">
+    <h3>S2JS is for kids who coded with Scratch now	ready to move beyond, to Javascript. </h3>
+	<div>
+	<a title="Scratch is by MIT Media Labs, and is awesome." href="http://scratch.mit.edu/"><img src="./S2JS - Javascript coding after Scratch_files/scratchlogo.png" style="float:right"></a>
+	If you've enjoyed coding in Scratch, but find yourself bumping up against its limitations and would like to take the next
+	step in programming Javascript, then S2JS is for you.
+	<p>
+	You'll be able to write Scratch-like games that run anywhere, including on your
+	friends smartphones.
+	</p></div>
+    <button onclick="SysMenu(&#39;none&#39;)">OK, show me</button>
+	<p>
+    <img src="./S2JS - Javascript coding after Scratch_files/directentry.jpg">
+  </p></div>
+ </div>
+	
+ 
+<div id="tconsole" hidden="" class="popbox sysmenu nl">
+  <div class="pophead popclose popcolor" onclick="SysMenu(&#39;none&#39;)" style="float:right; padding-top:0">
+	   Close
+		</div>
+
+  <h1 style="margin-top:0">Teacher Console</h1>
+  <iframe height="100%" style="height:90vh" src="./S2JS - Javascript coding after Scratch_files/tconsole.html"></iframe>	
+  </div>
+	
+ 
+<div id="useracct" hidden="" class="popbox sysmenu nl">
+  <div class="pophead popclose popcolor" onclick="SysMenu(&#39;none&#39;)" style="float:right; padding-top:0">
+	   Cancel
+		</div>
+
+  <h1 style="margin-top:0">Account Details</h1>
+  <iframe height="100%" src="./S2JS - Javascript coding after Scratch_files/useracct.html"></iframe>	
+  </div>
+	
+ 
+ 
+ <div id="remind1" hidden="" class="popbox sysmenu" style="color:black; background-color: pink; z-index:99; margin:10% 33% 50%;  width:33%; height:33%; overflow:visible; text-align: center; z-index:120">
+  <h1 style="color:red; font-weight:600">Remember</h1>
+  Use the <b>left</b> side to <b>learn</b> stuff.
+  <p>
+  Use the <b>right</b> side to <b>build</b> your own stuff.
+  </p><p>
+  <input type="button" value="Got it" onclick="SysMenu(&#39;none&#39;)">
+  
+  </p><div style="position:absolute; right:-180px; top:30%;"> 
+  <svg width="208" height="155">
+ <defs>
+  <filter id="imagebot_6">
+   <fegaussianblur stdDeviation="4.32835" id="imagebot_7"></fegaussianblur>
+  </filter>
+  <lineargradient y2="1" x2="1" y1="0" x1="0" id="imagebot_8">
+   <stop offset="0" stop-color="#FFFF00"></stop>
+   <stop offset="1" stop-color="#ff0000"></stop>
+  </lineargradient>
+ </defs>
+ <g label="Layer 1" id="imagebot_2">
+  <g label="Layer 1" transform="translate(0, 6) matrix(1, 0, 0, 1, -368.691, -364.714)" id="imagebot_3">
+   <path fill-rule="evenodd" filter="url(#imagebot_6)" stroke="#000000" stroke-width="6.8" fill="url(#imagebot_8)" d="M385.54001,459.29999C448.87001,447.96999 486.88,449.91999 510.69001,459.29999C506.61001,473.29999 491.42001,483.81999 477.46001,496.06999C504.86001,482.95999 532.65001,470.98999 561.61001,459.99999C553.27001,425.17999 524.84001,405.86999 500.80001,381.51999C504.32001,389.69999 509.44001,398.67999 512.88001,406.83998C514.61001,410.92999 515.37001,414.62998 514.23001,417.57998C472.51001,403.67999 430.79001,404.14998 389.07001,414.74998L385.54001,459.29998z" id="imagebot_5"></path>
+   <path fill-rule="evenodd" stroke="#000000" stroke-width="6.8" fill="url(#imagebot_8)" d="M384.10999,448.57999C447.44999,437.25999 485.44998,439.19999 509.26999,448.57999C505.17999,462.58999 489.99999,473.10999 476.02999,485.34999C503.42999,472.24999 531.21999,460.26999 560.17999,449.28999C551.83999,414.45998 523.40999,395.14999 499.36999,370.79999C502.88999,378.98999 508.01999,387.95999 511.44999,396.11999C513.17999,400.20999 513.93999,403.91999 512.79999,406.85999C471.07999,392.96999 429.35998,393.42999 387.63998,404.02999L384.10998,448.57999z" id="imagebot_4"></path>
+  </g>
+ </g>
+</svg>
+</div>
+
+  
+<div style="position:absolute; left:-180px; top:10%;"> 
+<svg width="208" height="155" top="10">
+ <defs>
+  <filter id="imagebot_6">
+   <fegaussianblur stdDeviation="4.32835" id="imagebot_7"></fegaussianblur>
+  </filter>
+  <lineargradient y2="1" x2="1" y1="0" x1="0" id="imagebot_8">
+   <stop offset="0" stop-color="#FFFF00"></stop>
+   <stop offset="1" stop-color="#ff0000"></stop>
+  </lineargradient>
+ </defs>
+ <g label="Layer 1" id="imagebot_2">
+  <g label="Layer 1" transform="rotate(180, 98.7504, 72.6353) matrix(1, 0, 0, 1, -384.109, -370.8)" id="imagebot_3">
+   <path fill-rule="evenodd" filter="url(#imagebot_6)" stroke="#000000" stroke-width="6.8" fill="url(#imagebot_8)" d="M385.54001,459.29999C448.87001,447.96999 486.88,449.91999 510.69001,459.29999C506.61001,473.29999 491.42001,483.81999 477.46001,496.06999C504.86001,482.95999 532.65001,470.98999 561.61001,459.99999C553.27001,425.17999 524.84001,405.86999 500.80001,381.51999C504.32001,389.69999 509.44001,398.67999 512.88001,406.83998C514.61001,410.92999 515.37001,414.62998 514.23001,417.57998C472.51001,403.67999 430.79001,404.14998 389.07001,414.74998L385.54001,459.29998z" id="imagebot_5"></path>
+   <path fill-rule="evenodd" stroke="#000000" stroke-width="6.8" fill="url(#imagebot_8)" d="M384.10999,448.57999C447.44999,437.25999 485.44998,439.19999 509.26999,448.57999C505.17999,462.58999 489.99999,473.10999 476.02999,485.34999C503.42999,472.24999 531.21999,460.26999 560.17999,449.28999C551.83999,414.45998 523.40999,395.14999 499.36999,370.79999C502.88999,378.98999 508.01999,387.95999 511.44999,396.11999C513.17999,400.20999 513.93999,403.91999 512.79999,406.85999C471.07999,392.96999 429.35998,393.42999 387.63998,404.02999L384.10998,448.57999z" id="imagebot_4"></path>
+  </g>
+ </g>
+</svg>  
+</div>  
+ 
+  
+</div>
+
+
+<!-- script src="http://jsconsole.com/remote.js?B0FF50DE-44F6-46F3-9125-6CA86FD5F58E"></script-->
+  
+<script>
+
+col_right.innerHTML = "<iframe id='xright' src=\'coder.html" +  window.location.search + "\'></iframe>";
+col_left.innerHTML = "<iframe id='xleft' src=\'teacher.html" +  window.location.search + "\'></iframe>";
+
+
+var current_split;
+
+function broadcast(s) {
+  for (var i=0; i<frames.length; i++) frames[i].postMessage(s, "*");  
+  }
+
+
+function Change_Logon_State(u) {
+    uid.innerHTML= u;
+	var els=document.querySelectorAll('.LogonReqd');
+	for (var i=0; i<els.length; i++) {
+		if (u) els[i].classList.remove('NotLoggedOn')
+		  else els[i].classList.add('NotLoggedOn')
+		}
+	}  
+	
+addEventListener("message", function(event) {
+  var msg= event.data.split(":")[0];
+  var param= event.data.split(":").slice(1).join(":");
+  if (msg == "logout") {Change_Logon_State('');};
+  if (msg == "logon") {Change_Logon_State(param);};
+  if (msg == "setlogo") {GroupLogo.src= param; };
+  if (msg == "go5050") setSplit(50);
+  if (msg == "useracctchange") SysMenu('none');
+  if (msg == "showuseracct") SysMenu('useracct');
+  if (msg == "switchlesson") RemindGoogleTranslate();
+  if (msg == "directentry") {
+		setSplit(80)
+		directentry.style.display= "block";
+		}
+  broadcast(event.data); 
+  });
+ 
+  
+function RemindGoogleTranslate  () {
+// sometimes google translate doesn't translate the replaced contents of a dynamic div
+// by fiddling with the visibility of things that would overlay the translated div, we can convince google to lift its game
+img_resizer.style.display = "none";
+img_resizer.style.display = "";
+}
+
+function DisplayMenu(x) {
+   if (typeof x == 'undefined') x = navbar.style.display == 'none';  // if not provided, toggle
+   navbar.style.display= (x) ? "block" : "none";
+   }  
+	
+ 
+function SysMenu(which) {
+  DisplayMenu(false);
+  if ((which != 'none') && (typeof ga !== 'undefined')) ga('send', 'event', 'SysMenu', which);
+  
+  if (which=='tconsole') broadcast('InitTConsole');
+  if (which=='useracct') broadcast('InitUserAcct');
+  
+  if (which=='none') which='ffdiv';	   
+  
+  var divs = document.getElementsByClassName('sysmenu');
+  for (var i=0; i<divs.length; i++) {
+       divs[i].style.display = (divs[i].id == which) ? 'block' : 'none';
+	   }
+ }
+
+
+
+function hideWelcome() {
+  function fader(){
+    tablex.style.opacity= Number(tablex.style.opacity) + 0.05;
+    welcome.style.opacity= Number(welcome.style.opacity) - 0.05;
+    if (Number(welcome.style.opacity) > 0.5) setTimeout(fader,30)
+                              else {
+							        welcome.style.display='none'; 
+							        welcome.style.opacity=1; 
+									tablex.style.opacity=1;
+									}
+    }
+fader();  
+}
+
+
+
+function setSplit(np) {
+          if (np < 0) np=0;
+          if (np > 99) np=99.1;
+		  current_split = np;
+		  localStorage.setItem("Split", np);
+
+          col_left.style.display = (np<1)?"none":"";
+          col_right.style.display = (np>99)?"none":"";
+		  if (np<1) {
+					teacher.classList.remove("toolselected");
+					coder.classList.add("toolselected");
+					both.classList.remove("toolselected");
+		            }
+
+		  else if (np>=99) {
+					teacher.classList.add("toolselected");
+					coder.classList.remove("toolselected");
+					both.classList.remove("toolselected");
+		            }
+		  else  {
+					teacher.classList.remove("toolselected");
+					coder.classList.remove("toolselected");
+					both.classList.add("toolselected");
+		            }
+		  broadcast("SetSplit");
+          col_left.width = np + "%";
+    
+  }
+  
+ var start_x, start_p;
+  
+  function mousedown(e) {
+      start_p = parseFloat(col_left.width)
+      start_x = e.clientX;
+      r = tablex.getBoundingClientRect();
+      grabber.style.width = r.width+ "px";
+      grabber.style.height = r.height+ "px";
+      grabber.style.display="";
+  }
+
+ 
+  function touchstart(e) {
+      start_p = parseFloat(col_left.width)
+      start_x = e.touches[0].clientX;
+      r = tablex.getBoundingClientRect();
+      grabber.style.width = r.width+ "px";
+      grabber.style.height = r.height+ "px";
+      grabber.style.display="";
+  }
+  
+  document.onmousemove = function (e) {
+      if (start_x && (e.buttons > 0)) {
+          var dx = e.clientX - start_x;
+          var np =  (start_p + (dx / tablex.getBoundingClientRect().width * 100));
+          setSplit(np); 
+		  img_resizer.style.display='none';
+          }
+      }
+  
+  
+  document.ontouchmove = function (e) {
+      if (start_x) {
+          var dx = e.touches[0].clientX - start_x;
+          var np =  (start_p + (dx / tablex.getBoundingClientRect().width * 100));
+          setSplit(np); 
+		  e.preventDefault();
+          }
+      }
+  
+  document.onmouseup = function (e) {
+      start_x = null;
+      grabber.style.display="none";
+      }
+  
+
+
+function isIE () {
+  var myNav = navigator.userAgent.toLowerCase();
+  if (myNav.indexOf('msie') != -1) return(true);
+  if (!(window.ActiveXObject) && "ActiveXObject" in window) return(true);
+  return(false);
+}
+
+function get_browser_version () {
+    var ua= navigator.userAgent, tem, M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1] || '');
+    }
+    if(M[1]=== 'Chrome'){
+        tem= ua.match(/\bOPR\/(\d+)/)
+        if(tem!= null) return 'Opera '+tem[1];
+    }
+    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+    return M.join(' ');
+}
+
+function handle_ff_size() {
+	 if (browser_details[0]== "FIREFOX") ffdiv.style.height= (window.innerHeight - 70) + "px"
+	 }
+	
+var browser_details= get_browser_version().split(' ');	
+browser_details[0] = browser_details[0].toUpperCase()
+if (browser_details[0]== "IE") alert('We respect your choice to use Microsoft Internet Explorer, but S2JS works much better with Firefox or Chrome. Just saying.');
+
+if ((browser_details[0]== "IE" && browser_details[1] < 10) ||
+    (browser_details[0]== "CHROME" && browser_details[1] < 31) ||
+    (browser_details[0]== "FIREFOX" && browser_details[1] < 31) ||
+    (browser_details[0]== "SAFARI" && browser_details[1] < 7))
+     SysMenu('tooold');
+
+
+	 
+handle_ff_size();
+	 
+addEventListener("resize", function () {
+   handle_ff_size()
+   setSplit(current_split);
+   });
+	 
+numseen = localStorage.getItem("welcomes") || 0;
+if (numseen == 1 || numseen == 2) setSplit(50)
+    else setSplit(localStorage.getItem("Split") || 100);
+
+//numseen=1;	
+if (numseen == 1) remind1.style.display="block";
+if (numseen == 2) remind1.style.display="block";
+
+if (numseen > 3) {
+    welcome.style.display='none'; 
+    }
+else {
+    localStorage.removeItem("welcomes");
+    localStorage.setItem("welcomes", Number(numseen)+1);
+ 
+    }	
+
+function Workaround_Chrome_FontFace_Bug () {
+	// This is really unfortunate, but Chrome has a bug wherein sporadically text which is rendered using a font
+	// loaded via @fontface will render as invisible, and no amount of wailing or gnashing of teeth will cause
+	// it to show up. Turns out finding all such possibly affected elements and tweaking the font-family will
+	// workaround the problem. I look forward to removing this code.
+	try {
+		for (var ss=0; ss<document.styleSheets.length; ss++) {
+		  var s = document.styleSheets[ss];
+		  if (s.cssRules) for (var i=0; i<s.cssRules.length; i++ ) {
+			var fn = "";
+			if (s.cssRules[i].style) fn = s.cssRules[i].style.fontFamily || "";
+			if (fn.indexOf("neris") > -1) {
+				s.cssRules[i].style.fontFamily = fn.split("!")[0] + ",courier!important";
+				}
+			}
+		 }
+	   } 
+	catch (e) {}
+	}	
+
+	
+	
+if (!!document.fonts && (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor))) {
+	document.fonts.ready.then(function () {
+		setTimeout(function (){
+			   console.log('ZAP')
+			   broadcast('IsChrome')	
+			   Workaround_Chrome_FontFace_Bug();
+				}, 750);
+		});
+	}
+
+	
+if (window.location.search) {
+	// if we've come it with direct access, we certainly don't want any bookmarks made
+	history.replaceState({}, "S2JS", location.origin)
+	}
+
+	
+	
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55449998-1', 'auto');
+  ga('send', 'pageview');
+
+</script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./S2JS - Javascript coding after Scratch_files/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1240px; height: 274px; display: none;" src="./S2JS - Javascript coding after Scratch_files/saved_resource.html"></iframe></body></html>
